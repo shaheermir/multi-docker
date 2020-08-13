@@ -5,26 +5,30 @@
       "name": "client",
       "image": "shaheermir/multi-client",
       "hostname": "client",
-      "essential": true
+      "essential": true,
+      "memory": 128
     },
     {
       "name": "server",
       "image": "shaheermir/multi-server",
       "hostname": "api",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "worker",
       "image": "shaheermir/multi-worker",
       "hostname": "worker",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "nginx",
       "image": "shaheermir/multi-nginx",
       "essential": true,
       "portMappings": [{ "hostPort": 80, "containerPort": 80 }],
-      "links": ["client", "server"]
+      "links": ["client", "server"],
+      "memory": 128
     }
   ]
 }
